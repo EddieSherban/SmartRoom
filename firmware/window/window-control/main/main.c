@@ -6,6 +6,8 @@
 
 #define CONFIG_BLINK_PERIOD 1000
 
+//ESP32 controls window linear actuator to open and close it
+
 static const char* TAG = "main";
 static gpio_num_t LED_PIN = 2;
 static uint32_t LED_state = 0;
