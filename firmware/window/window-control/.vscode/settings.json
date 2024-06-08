@@ -16,7 +16,9 @@
     "idf.pythonBinPathWin": "C:\\Users\\eddie\\.espressif\\python_env\\idf5.2_py3.11_env\\Scripts\\python.exe",
     "idf.toolsPathWin": "C:\\Users\\eddie\\.espressif",
     "files.associations": {
-        "esp_log.h": "c"
+        "esp_log.h": "c",
+        "freertos.h": "c",
+        "portable.h": "c"
     },
     "idf.flashType": "UART",
     "idf.gitPathWin": "C:\\Users\\eddie\\.espressif\\tools\\idf-git\\2.39.2\\cmd\\git.exe"
