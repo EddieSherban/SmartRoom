@@ -3,10 +3,11 @@
 #include "freertos/task.h"
 #include "driver/gpio.h"
 #include "esp_log.h"
+#include "mqtt_client.h"
 
 #define CONFIG_BLINK_PERIOD 1000
 
-//ESP32 controls window linear actuator to open and close itwegweg
+//ESP32 controls linear actuator to open and close the window
 
 static const char* TAG = "main";
 static gpio_num_t LED_PIN = 2;
