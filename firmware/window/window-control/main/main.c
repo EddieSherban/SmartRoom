@@ -1,3 +1,19 @@
+/******************************************************************************
+
+    Project: Smart Room
+    Description: This project contains functions for Smart Room tasks
+                 such as window control.
+
+    Author: Eddie Sherban
+    Date: 2024-06-14
+
+    Files:
+    - main.cpp
+    - motor_control.c
+    - mqtt_network.c
+
+******************************************************************************/
+//
 #include <stdio.h>
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
@@ -6,8 +22,6 @@
 #include "mqtt_client.h"
 
 #define CONFIG_BLINK_PERIOD 1000
-
-//ESP32 controls linear actuator to open and close the window
 
 static const char* TAG = "main";
 static gpio_num_t LED_PIN = 2;
