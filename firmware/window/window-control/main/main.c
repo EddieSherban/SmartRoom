@@ -13,7 +13,7 @@
     - mqtt_network.c
 
 ******************************************************************************/
-//
+//so now everything should work perfectly now right now please work pleaseeee.
 #include <stdio.h>
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
