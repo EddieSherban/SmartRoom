@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
-#include "driver/gpio.h"
 #include "esp_log.h"
+#include "driver/gpio.h"
 #include "mqtt_client.h"
 
 #define CONFIG_BLINK_PERIOD 1000
