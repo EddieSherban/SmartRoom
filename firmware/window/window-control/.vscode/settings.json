@@ -18,7 +18,9 @@
     "files.associations": {
         "esp_log.h": "c",
         "freertos.h": "c",
-        "portable.h": "c"
+        "portable.h": "c",
+        "gpio.h": "c",
+        "mqtt_client.h": "c"
     },
     "idf.flashType": "UART",
     "idf.gitPathWin": "C:\\Users\\eddie\\.espressif\\tools\\idf-git\\2.39.2\\cmd\\git.exe"
