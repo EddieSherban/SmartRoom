@@ -1,4 +1,5 @@
 //mqtt_network.h
+//want to make esp32 communciate with raspberry pi
 
 #include "mqtt_client.h"
 #include <stdio.h>
