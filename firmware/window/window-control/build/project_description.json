@@ -1,7 +1,7 @@
 {
     "version":            "1.1",
     "project_name":       "window-control",
-    "project_version":    "38fb60e-dirty",
+    "project_version":    "a956f23-dirty",
     "project_path":       "D:/projects/smart_room/firmware/window/window-control",
     "idf_path":           "C:/Espressif/frameworks/esp-idf-v5.2.2",
     "build_dir":          "D:/projects/smart_room/firmware/window/window-control/build",
@@ -805,7 +805,7 @@
             "managed_reqs": [],
             "managed_priv_reqs": [],
             "file": "D:/projects/smart_room/firmware/window/window-control/build/esp-idf/main/libmain.a",
-            "sources": [ "D:/projects/smart_room/firmware/window/window-control/main/main.c" ],
+            "sources": [ "D:/projects/smart_room/firmware/window/window-control/main/main.cpp" ],
             "include_dirs": [ "." ]
         },
         "mbedtls": {
