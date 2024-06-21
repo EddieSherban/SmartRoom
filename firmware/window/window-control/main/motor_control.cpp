@@ -1,12 +1,18 @@
-#include <string>
-#include 
+/******************************************************************************
 
-class motor {
-public:
-    int motorSpeed(std::string s) {
-        
-    }
-    int motorPosition(void) {
-        
-    }
-};
+    Description: This file contains code related to motor control.
+
+    Author: Eddie Sherban
+    Date: 2024-06-21
+
+******************************************************************************/
+
+#include "motor_control.h"
+
+void motor::motorSpeed(std::string s) {
+
+}
+
+void motor::motorPosition(void) {
+    
+}

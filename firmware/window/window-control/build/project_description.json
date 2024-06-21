@@ -1,7 +1,7 @@
 {
     "version":            "1.1",
     "project_name":       "window-control",
-    "project_version":    "a956f23-dirty",
+    "project_version":    "daca59e-dirty",
     "project_path":       "D:/projects/smart_room/firmware/window/window-control",
     "idf_path":           "C:/Espressif/frameworks/esp-idf-v5.2.2",
     "build_dir":          "D:/projects/smart_room/firmware/window/window-control/build",
@@ -805,8 +805,8 @@
             "managed_reqs": [],
             "managed_priv_reqs": [],
             "file": "D:/projects/smart_room/firmware/window/window-control/build/esp-idf/main/libmain.a",
-            "sources": [ "D:/projects/smart_room/firmware/window/window-control/main/main.cpp" ],
-            "include_dirs": [ "." ]
+            "sources": [ "D:/projects/smart_room/firmware/window/window-control/main/main.cpp", "D:/projects/smart_room/firmware/window/window-control/main/motor_control.cpp", "D:/projects/smart_room/firmware/window/window-control/main/mqtt_network.cpp" ],
+            "include_dirs": [ "../include" ]
         },
         "mbedtls": {
             "alias": "idf::mbedtls",
@@ -2116,7 +2116,7 @@
             "priv_reqs": [],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "include_dirs": [ "." ]
+            "include_dirs": [ "../include" ]
         }
     },
     "debug_prefix_map_gdbinit": ""
