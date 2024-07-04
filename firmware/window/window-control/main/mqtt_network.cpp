@@ -9,16 +9,18 @@
 ******************************************************************************/
 
 #include "mqtt_network.h"
+#include "wifi_network.h"
 
 /************************* WiFi Access Point *********************************/
-const char* WLAN_SSID = "SSID";
-const char* WLAN_PASS = "password";
+const char* WLAN_SSID = "";
+const char* WLAN_PASS = "";
 
 /************************* Setup *********************************/
 #define SERVER      "core-mosquitto"
 #define SERVERPORT  1883
 #define USERNAME    "homeassistant_username"
 #define KEY         "mqqt password"
+#define BROKER_URI  "mqtt://192.168.77.237:1883"
 
 static const char* TAG = "mqtt_functionality";
 
@@ -86,6 +88,7 @@ static void mqtt_event_handler(void* handler_args, esp_event_base_t base, int32_
     }
 }
 
+namespace Window{
 namespace MQTT {
     Client::Client() {
         ESP_LOGI(TAG, "[APP] Startup..");
@@ -108,7 +111,8 @@ namespace MQTT {
         * Read "Establishing Wi-Fi or Ethernet Connection" section in
         * examples/protocols/README.md for more information about this function.
         */
-        //ESP_ERROR_CHECK(example_connect());
+        Window::WiFi wifi;
+        wifi.connect();
     }
 
     Client::~Client() {
@@ -116,8 +120,8 @@ namespace MQTT {
     }
 
     void Client::mqtt_connect(const char* broker, int port) {
-        esp_mqtt_client_config_t mqtt_cfg = {};
-        mqtt_cfg.broker.address.uri = "192.168.77.237:1883";
+        esp_mqtt_client_config_t mqtt_cfg;
+        mqtt_cfg.broker.address.uri = BROKER_URI;
 
         #if CONFIG_BROKER_URL_FROM_STDIN
         char line[128];
@@ -148,4 +152,5 @@ namespace MQTT {
         esp_mqtt_client_register_event(client, static_cast<esp_mqtt_event_id_t>(ESP_EVENT_ANY_ID), mqtt_event_handler, NULL);
         esp_mqtt_client_start(client);
     }
+}    
 }

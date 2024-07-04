@@ -21,19 +21,21 @@
 
 #pragma once
 
-namespace MQTT {
-    class Client {
-    public:
-        Client(); 
-        ~Client();
+namespace Window{
+    namespace MQTT {
+        class Client {
+        public:
+            Client(); 
+            ~Client();
 
-        void mqtt_connect(const char* broker, int port); //connect
-        void publish(const char* topic, const char* message); //publish
-        void subscribe(const char* topic); //subscribe
-        void disconnect(); //disconnect
-        void onMessageReceived(void(*callback)(char*, uint8_t*, unsigned int)); //handle messages
-        
-    private:
-        int myData; // Member variable
-    };
+            void mqtt_connect(const char* broker, int port); //connect
+            void publish(const char* topic, const char* message);
+            void subscribe(const char* topic);
+            void disconnect();
+            void onMessageReceived(void(*callback)(char*, uint8_t*, unsigned int)); //handle messages
+            
+        private:
+            int myData; // Member variable
+        };
+    }    
 }

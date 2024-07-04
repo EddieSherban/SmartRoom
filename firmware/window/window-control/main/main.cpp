@@ -53,7 +53,7 @@ void vBlinkTask(void *pvParameters) {
 void vSendMessage(void* pvParameters) {
     while(1) {
         ESP_LOGI(TAG, "Sending MQTT message...");
-        MQTT::Client client;
+        Window::MQTT::Client client;
         client.mqtt_connect("core-mosquitto", 1883);
         vTaskDelay(pdMS_TO_TICKS(2000));
     }
