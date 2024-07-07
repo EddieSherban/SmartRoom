@@ -3,3 +3,5 @@ design_docs/esp32_notez.docx
 sdkconfig
 sdkconfig.old
 secrets.h
+.vscode/
+.devcontainer/
