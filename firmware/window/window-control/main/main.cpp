@@ -19,6 +19,9 @@
 #include "freertos/task.h"
 #include "esp_log.h"
 #include "driver/gpio.h"
+#include "esp_attr.h"
+#include "motor_control.h"
+#include "mqtt_network.h"
 
 #define CONFIG_BLINK_PERIOD 1000
 
@@ -37,14 +40,33 @@ static void blink_led(void) {
     gpio_set_level(LED_PIN, LED_state);
 }
 
-extern "C" void app_main(void)
-{
-    configure_led();
-
+void vBlinkTask(void *pvParameters) {
     while(1) {
         ESP_LOGI(TAG, "Turning the LED %s", LED_state == true ? "ON": "OFF");
         blink_led();
         LED_state = !LED_state;
-        vTaskDelay(CONFIG_BLINK_PERIOD / portTICK_PERIOD_MS);
+        //vTaskDelay(CONFIG_BLINK_PERIOD / portTICK_PERIOD_MS);
+        vTaskDelay(pdMS_TO_TICKS(CONFIG_BLINK_PERIOD));
     }
+}
+
+void vSendMessage(void* pvParameters) {
+    while(1) {
+        ESP_LOGI(TAG, "Sending MQTT message...");
+        esp_mqtt
+        vTaskDelay(pdMS_TO_TICKS(2000));
+    }
+}
+
+extern "C" void app_main(void)
+{
+    configure_led();
+
+    ESP_LOGI(TAG, "main.cpp");
+    Window::MQTT::Client client;
+    client.mqtt_connect();
+
+    // LED blinking task
+    xTaskCreate(vBlinkTask, "Blink Task", 4096, NULL, tskIDLE_PRIORITY, NULL);
+    xTaskCreate(vSendMessage, "MQTT Task", 4096, NULL, tskIDLE_PRIORITY, NULL);
 }

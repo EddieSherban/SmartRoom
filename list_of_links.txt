@@ -1,0 +1,7 @@
+https://www.youtube.com/watch?v=8hly31xKli0
+https://docs.espressif.com/projects/esp-idf/en/stable/esp32/api-reference/protocols/mqtt.html
+https://www.emqx.com/en/blog/esp32-connects-to-the-free-public-mqtt-broker
+https://github.com/espressif/esp-idf/tree/v5.2.2/examples/protocols/mqtt/tcp
+https://github.com/espressif/esp-idf/blob/v5.2.2/examples/protocols/README.md
+https://github.com/espressif/esp-idf/blob/v5.2.2/examples/wifi/getting_started/station/main/station_example_main.c
+https://chatgpt.com/
