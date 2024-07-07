@@ -1,4 +1,4 @@
-firmware/window/windowcontrol/build/
+firmware/window/window-control/build/
 design_docs/esp32_notez.docx
 sdkconfig
 sdkconfig.old
