@@ -21,7 +21,8 @@
         "portable.h": "c",
         "gpio.h": "c",
         "mqtt_client.h": "c",
-        "stdbool.h": "c"
+        "stdbool.h": "c",
+        "system_error": "cpp"
     },
     "idf.flashType": "UART",
     "idf.gitPathWin": "C:\\Users\\eddie\\.espressif\\tools\\idf-git\\2.39.2\\cmd\\git.exe"

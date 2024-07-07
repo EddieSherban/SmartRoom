@@ -1,7 +1,7 @@
 {
     "version":            "1.1",
     "project_name":       "window-control",
-    "project_version":    "cb8d44b-dirty",
+    "project_version":    "5ba8082-dirty",
     "project_path":       "D:/projects/smart_room/firmware/window/window-control",
     "idf_path":           "C:/Espressif/frameworks/esp-idf-v5.2.2",
     "build_dir":          "D:/projects/smart_room/firmware/window/window-control/build",

@@ -28,7 +28,7 @@ namespace Window{
             Client(); 
             ~Client();
 
-            void mqtt_connect(const char* broker, int port); //connect
+            void mqtt_connect(); //connect
             void publish(const char* topic, const char* message);
             void subscribe(const char* topic);
             void disconnect();

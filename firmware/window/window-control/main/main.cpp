@@ -53,8 +53,7 @@ void vBlinkTask(void *pvParameters) {
 void vSendMessage(void* pvParameters) {
     while(1) {
         ESP_LOGI(TAG, "Sending MQTT message...");
-        Window::MQTT::Client client;
-        client.mqtt_connect("core-mosquitto", 1883);
+        esp_mqtt
         vTaskDelay(pdMS_TO_TICKS(2000));
     }
 }
@@ -62,6 +61,10 @@ void vSendMessage(void* pvParameters) {
 extern "C" void app_main(void)
 {
     configure_led();
+
+    ESP_LOGI(TAG, "main.cpp");
+    Window::MQTT::Client client;
+    client.mqtt_connect();
 
     // LED blinking task
     xTaskCreate(vBlinkTask, "Blink Task", 4096, NULL, tskIDLE_PRIORITY, NULL);

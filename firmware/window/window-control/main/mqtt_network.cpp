@@ -10,17 +10,7 @@
 
 #include "mqtt_network.h"
 #include "wifi_network.h"
-
-/************************* WiFi Access Point *********************************/
-const char* WLAN_SSID = "";
-const char* WLAN_PASS = "";
-
-/************************* Setup *********************************/
-#define SERVER      "core-mosquitto"
-#define SERVERPORT  1883
-#define USERNAME    "homeassistant_username"
-#define KEY         "mqqt password"
-#define BROKER_URI  "mqtt://192.168.77.237:1883"
+#include "secrets.h"
 
 static const char* TAG = "mqtt_functionality";
 
@@ -106,11 +96,8 @@ namespace MQTT {
         ESP_ERROR_CHECK(nvs_flash_init());
         ESP_ERROR_CHECK(esp_netif_init());
         ESP_ERROR_CHECK(esp_event_loop_create_default());
+        ESP_LOGI(TAG, "esp event loop created successfully...");
 
-        /* This helper function configures Wi-Fi or Ethernet, as selected in menuconfig.
-        * Read "Establishing Wi-Fi or Ethernet Connection" section in
-        * examples/protocols/README.md for more information about this function.
-        */
         Window::WiFi wifi;
         wifi.connect();
     }
@@ -119,34 +106,18 @@ namespace MQTT {
 
     }
 
-    void Client::mqtt_connect(const char* broker, int port) {
+    void Client::mqtt_connect() {
+        ESP_LOGI(TAG, "mqtt_connect()...");
         esp_mqtt_client_config_t mqtt_cfg;
+        memset(&mqtt_cfg, 0, sizeof(esp_mqtt_client_config_t));
+
+        //The folowing information is available in a "secrets.h" file that is not included in the repository, but locally
         mqtt_cfg.broker.address.uri = BROKER_URI;
-
-        #if CONFIG_BROKER_URL_FROM_STDIN
-        char line[128];
-
-        if (strcmp(mqtt_cfg.broker.address.uri, "FROM_STDIN") == 0) {
-            int count = 0;
-            printf("Please enter url of mqtt broker\n");
-            while (count < 128) {
-                int c = fgetc(stdin);
-                if (c == '\n') {
-                    line[count] = '\0';
-                    break;
-                } else if (c > 0 && c < 127) {
-                    line[count] = c;
-                    ++count;
-                }
-                vTaskDelay(10 / portTICK_PERIOD_MS);
-            }
-            mqtt_cfg.broker.address.uri = line;
-            printf("Broker url: %s\n", line);
-        } else {
-            ESP_LOGE(TAG, "Configuration mismatch: wrong broker url");
-            abort();
-        }
-        #endif /* CONFIG_BROKER_URL_FROM_STDIN */
+        mqtt_cfg.broker.address.hostname = HOSTNAME;
+        mqtt_cfg.broker.address.port = SERVER_PORT;
+        mqtt_cfg.credentials.username = USERNAME;
+        mqtt_cfg.credentials.client_id = CLIENT_ID;
+        mqtt_cfg.credentials.authentication.password = PASSWORD;
 
         esp_mqtt_client_handle_t client = esp_mqtt_client_init(&mqtt_cfg);
         esp_mqtt_client_register_event(client, static_cast<esp_mqtt_event_id_t>(ESP_EVENT_ANY_ID), mqtt_event_handler, NULL);
