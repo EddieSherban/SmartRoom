@@ -1,5 +1,5 @@
 firmware/window/windowcontrol/build/
-design_docs/esp32_notez
+design_docs/esp32_notez.docx
 sdkconfig
 sdkconfig.old
 secrets.h
