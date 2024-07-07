@@ -1,7 +1,12 @@
 https://www.youtube.com/watch?v=8hly31xKli0
 https://docs.espressif.com/projects/esp-idf/en/stable/esp32/api-reference/protocols/mqtt.html
+http://homeassistant.local:8123/config/mqtt?config_entry=d2bc39f3345aa3b01a67cec4cf5258ff
 https://www.emqx.com/en/blog/esp32-connects-to-the-free-public-mqtt-broker
-https://github.com/espressif/esp-idf/tree/v5.2.2/examples/protocols/mqtt/tcp
+https://github.com/espressif/esp-idf/blob/v5.2.2/examples/protocols/mqtt/tcp/main/app_main.c#L142
 https://github.com/espressif/esp-idf/blob/v5.2.2/examples/protocols/README.md
 https://github.com/espressif/esp-idf/blob/v5.2.2/examples/wifi/getting_started/station/main/station_example_main.c
-https://chatgpt.com/
+https://chatgpt.com/c/d112221e-e9e7-4df1-a824-f38fd840740f
+https://www.reddit.com/r/homeassistant/comments/vyherp/how_can_i_find_the_mqtt_hostname/
+https://www.reddit.com/r/homeassistant/comments/wb7xh1/how_do_i_find_my_home_assistant_url/
+https://www.google.com/search?q=where+to+get+your+home+assistant+ip+address&rlz=1C1VDKB_enCA1036CA1036&oq=where+to+get+your+home+assistant+ip+address&gs_lcrp=EgZjaHJvbWUyBggAEEUYOdIBCDU2NjFqMGo3qAIAsAIA&sourceid=chrome&ie=UTF-8
+https://github.com/EddieSherban/SmartRoom/tree/main/design_docs
